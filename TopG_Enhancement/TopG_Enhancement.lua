@@ -260,9 +260,6 @@ local function MyRoutine()
 		-- variable,name=trinket2_is_weird,value=trinket.2.is.the_first_sigil|trinket.2.is.scars_of_fraternal_strife|trinket.2.is.cache_of_acquired_treasures
 		-- Note: These variables just exclude these three trinkets from the generic use_items. We'll just use HR's OnUseExcludes instead.
 		-- snapshot_stats
-		if Player:BuffDown(S.GhostWolf) then
-		 if Cast(S.GhostWolf) then return end
-		end
 	end
 
 	local function Single()
