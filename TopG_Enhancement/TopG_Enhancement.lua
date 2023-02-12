@@ -298,7 +298,7 @@ local function MyRoutine()
 		  if Cast(S.PrimordialWave) then return "primordial_wave single 16"; end
 		end
 		-- flame_shock,if=!ticking
-		if S.FlameShock:IsReady() and Target:IsSpellInRange(S.FlameShock) and (Target:DebuffDown(S.FlameShockDebuff)) then
+		if S.FlameShock:IsReady() and Target:TimeToDie() > 10 and Target:IsSpellInRange(S.FlameShock) and (Target:DebuffDown(S.FlameShockDebuff)) then
 		  if Cast(S.FlameShock) then return "flame_shock single 18"; end
 		end
 		-- lightning_bolt,if=buff.maelstrom_weapon.stack>=5&buff.primordial_wave.up&raid_event.adds.in>buff.primordial_wave.remains&(!buff.splintered_elements.up|fight_remains<=12)
@@ -398,7 +398,7 @@ local function MyRoutine()
 		  if Cast(S.EarthElemental) then return "earth_elemental single 64"; end
 		end
 		-- flame_shock
-		if S.FlameShock:IsCastable() and Target:IsSpellInRange(S.FlameShock) then
+		if S.FlameShock:IsCastable() then
 		  if Cast(S.FlameShock) then return "flame_shock single 66"; end
 		end
 		-- windfury_totem,if=buff.windfury_totem.remains<30
@@ -441,7 +441,7 @@ local function MyRoutine()
 		  if Cast(S.LavaLash) then return "lava_lash aoe 17"; end
 		end
 		-- flame_shock,if=!ticking
-		if S.FlameShock:IsReady() and Target:IsSpellInRange(S.FlameShock) and (Target:DebuffDown(S.FlameShockDebuff)) then
+		if S.FlameShock:IsReady() and Target:TimeToDie() > 10 and Target:IsSpellInRange(S.FlameShock) and (Target:DebuffDown(S.FlameShockDebuff)) then
 		  if Cast(S.FlameShock) then return "flame_shock aoe 18"; end
 		end
 		-- flame_shock,target_if=min:dot.flame_shock.remains,cycle_targets=1,if=talent.fire_nova.enabled&(active_dot.flame_shock<active_enemies)&active_dot.flame_shock<6
