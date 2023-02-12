@@ -237,6 +237,7 @@ local function MyRoutine()
 		return (TargetUnit:DebuffUp(S.FlameShockDebuff) and (S.FlameShockDebuff:AuraActiveCount() < Enemies10yCount and S.FlameShockDebuff:AuraActiveCount() < 6))
 	end
 
+
 	local function Precombat()
 		-- flask
 		-- food
@@ -581,10 +582,9 @@ local function MyRoutine()
 	local function MainRotation()
 		-- Check weapon enchants
 		HasMainHandEnchant, MHEnchantTimeRemains, _, _, HasOffHandEnchant, OHEnchantTimeRemains = GetWeaponEnchantInfo()
-
 		-- Unit Update
 		if AoEON() then
-			Enemies10y = Player:GetEnemiesInMeleeRange(10)
+			Enemies10y = Player:GetEnemiesInMeleeRangeFilter(10)
 			Enemies10yCount = #Enemies10y
 		else
 			Enemies10y = {}
@@ -705,6 +705,9 @@ local function MyRoutine()
 			-- If nothing else to do, show the Pool icon
 		end
 		
+	end
+	local function Init()
+		S.FlameShockDebuff:RegisterAuraTracking()
 	end
 	MainAddon.SetCustomAPL(Author, SpecID, MainRotation, Init)
 end
