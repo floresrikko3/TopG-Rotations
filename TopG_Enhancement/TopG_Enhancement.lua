@@ -632,7 +632,7 @@ local function MyRoutine()
 		if not Player:AffectingCombat() then
 			local ShouldReturn = Precombat(); if ShouldReturn then return ShouldReturn; end
 		end
-		if Player:AffectingCombat() and Player:BuffDown(S.GhostWolf) then
+		if Player:AffectingCombat() then
 			-- bloodlust
 			-- Not adding this, as when to use Bloodlust will vary fight to fight
 			-- potion,if=(talent.ascendance.enabled&raid_event.adds.in>=90&cooldown.ascendance.remains<10)|(talent.doom_winds.enabled&buff.doom_winds.up)|(!talent.doom_winds.enabled&!talent.ascendance.enabled&talent.feral_spirit.enabled&buff.feral_spirit.up)|(!talent.doom_winds.enabled&!talent.ascendance.enabled&!talent.feral_spirit.enabled)|active_enemies>1|fight_remains<30
