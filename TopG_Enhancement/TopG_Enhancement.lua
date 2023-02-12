@@ -39,8 +39,8 @@ local function MyRoutine()
 	local strmatch   = string.match
 
 	local function Init()
-		message( 'TopG Rotation', 1)
-		MainAddon:Print('Author: rollfacedk')
+		message( '“If failure makes you stronger, you can never lose.” -Top G', 1)
+		MainAddon:Print('Author: Top G')
 	end
 
 
